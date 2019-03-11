@@ -1,0 +1,22 @@
+format_version: '0.104'
+filter:
+  type: PolesZeros
+  units: rad/s
+  poles:
+  - '-5.892557e-03  5.892557e-03    # hi-pass: T1=120 sec b1=0.707'
+  - -5.892557e-03 -5.892557e-03
+  - '-2.542 0.0                     # f''4=2.5416'
+  - '-14.89600  68.39670            # f''2=70 Hz   b2=0.213'
+  - -14.89600 -68.39670
+  - '-64.60 0.0                     # pseudo-integrator at 64.6 Hz'
+  - '-30.00 0.0                     # lo-pass: f5=30 Hz'
+  zeros:
+  - 0.0 0.0
+  - 0.0 0.0
+  - '-2.41 0.0                      # f4=2.41 Hz'
+  - '-48.46117  68.67052            # f2=84.04835 b2=0.5765868'
+  - -48.46117 -68.67052
+Poles_and_Zeroes_unit: 'Hz #optionel'
+notes:
+- ' # poles et zeros d''un STS2 1ere version'
+- ''

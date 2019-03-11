@@ -1,0 +1,32 @@
+format_version: '0.104'
+filter:
+  type: PolesZeros
+  units: rad/s
+  poles:
+  - "-0.002817  0.002801\t"
+  - -0.002817  -0.002801
+  - -13.575917 0.0
+  - -24.732678 33.549862
+  - -24.732678 -33.549862
+  - -113.47747 0.0
+  - -181.43664 0.0
+  - -684.36626 0.0
+  - -923.09867 0.0
+  - -684.36626 700.28175
+  - -684.36626 -700.28175
+  - ' '
+  - 'Transfer_normalization_frequency     : 1'
+  - 'Transfer_normalization_constant      : 48249347130594.01'
+  zeros:
+  - 0.0 0.0
+  - 0.0 0.0
+  - -11.53873337 0.0
+  - -25.35338243 0.0
+  - -39.94789072 0.0
+  - -520.43666391 0.0
+Poles_and_Zeroes_unit: 'Hz #optionel'
+notes:
+- ' # Poles et Zeros Trillium-240'
+- '# le 16/02/2010 - M. Langlais'
+- '# valable pour les S/N > 399'
+- ''

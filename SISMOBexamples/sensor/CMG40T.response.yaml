@@ -1,0 +1,29 @@
+format_version: '0.104'
+"\tResponse_type": THEORETICAL
+"\tInput_sampling_interval": '0'
+"\tDelay": '0'
+"\tTransfer_normalization_frequency": '1'
+response:
+  stages:
+  - input_units:
+      name: M/S
+      description: VELOCITY
+    output_units:
+      name: V
+      description: Volts
+    gain:
+      value: 800.0
+      frequency: 100
+    filter:
+      type: ANALOG
+      input_full_scale: null
+      output_full_scale: null
+      description: ' SENSOR RESPONSE   #optionel'
+      $ref: include/CMG_60.filter.yaml
+    description: Base stage
+    output_sample_rate: 0.0
+    decimation_factor: 1
+notes:
+- ' # Fichier de reponse "standard" pour CMG40T a 60s'
+- '# AP, 10/04/2006'
+- ''

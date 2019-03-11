@@ -1,0 +1,31 @@
+format_version: '0.104'
+Response_type: THEORETICAL
+Input_sampling_interval: '0'
+Delay: '0'
+Transfer_normalization_constant: '1'
+Transfer_normalization_frequency: '1.0'
+response:
+  stages:
+  - input_units:
+      name: M/S
+      description: VELOCITY
+    output_units:
+      name: V
+      description: Volts
+    gain:
+      value: 749.1
+      frequency: 100
+    filter:
+      type: ANALOG
+      input_full_scale: null
+      output_full_scale: null
+      description: ' SENSOR RESPONSE   #optionel'
+      $ref: include/T120_compact.filter.yaml
+    description: Base stage
+    output_sample_rate: 0.0
+    decimation_factor: 1
+notes:
+- ' # Trillium Compact '
+- '# Doc Nanometrics page 48'
+- '# G. Cougoulat'
+- ''

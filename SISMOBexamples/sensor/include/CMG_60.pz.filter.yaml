@@ -1,0 +1,19 @@
+format_version: '0.104'
+filter:
+  type: PolesZeros
+  units: rad/s
+  poles:
+  - -0.01178 -0.01178
+  - -0.01178 +0.01178
+  - -160.0 0.0
+  - -80.0 0.0
+  - -180.0 0.0
+  zeros:
+  - 0.0 0.0
+  - 0.0 0.0
+Transfer_normalization_frequency: '1'
+Transfer_normalization_constant: '2304000'
+notes:
+- ' # poles et zeros d''un capteur Guralp a 60sec (Standard)'
+- '# essentiellement sur CMG40T, possible sur les CMG-3T, CMG3ESP'
+- ''

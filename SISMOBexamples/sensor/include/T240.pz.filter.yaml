@@ -1,0 +1,25 @@
+format_version: '0.104'
+filter:
+  type: PolesZeros
+  units: rad/s
+  poles:
+  - "-0.002817  0.002801\t"
+  - -0.002817  -0.002801
+  - -20.164931 0.0
+  - -30.557749  41.237046
+  - -30.557749  -41.237046
+  - -88.760712 181.914010
+  - -88.760712 -181.914010
+
+  zeros:
+  - 0.0 0.0
+  - 0.0 0.0
+  - -14.588142 0.0
+  - -25.480706 0.0
+  - -510.409902 0.0
+Poles_and_Zeroes_unit: 'Hz #optionel'
+notes:
+- ' # Poles et Zeros Trillium-240'
+- '# le 16/02/2010 - M. Langlais'
+- '# valable pour les S/N > 399'
+- ''

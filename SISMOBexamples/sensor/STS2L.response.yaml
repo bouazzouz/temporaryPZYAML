@@ -1,0 +1,32 @@
+format_version: '0.104'
+Response_type: THEORETICAL
+Poles_and_Zeros_unit: Hz
+Input_sampling_interval: '0'
+Delay: '0'
+Transfer_normalization_constant: '1'
+Transfer_normalization_frequency: '0.05'
+Number_of_zeroes: '6'
+Number_of_poles: '11'
+response:
+  stages:
+  - input_units:
+      name: M/S
+      description: VELOCITY
+    output_units:
+      name: V
+      description: Volts
+    gain:
+      value: 1500.0
+      frequency: 100
+    filter:
+      type: ANALOG
+      input_full_scale: null
+      output_full_scale: null
+      description: ' SENSOR RESPONSE   #optionel'
+    description: Base stage
+    output_sample_rate: 0.0
+    decimation_factor: 1
+notes:
+- ' # reponse du STS2  low consommation'
+- '# poles et zeros d''un STS2 1ere version'
+- ''

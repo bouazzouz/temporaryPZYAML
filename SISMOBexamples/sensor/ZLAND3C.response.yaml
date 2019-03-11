@@ -1,0 +1,33 @@
+format_version: '0.104'
+Response_type: THEORETICAL
+Input_sampling_interval: '0'
+Delay: '0'
+Transfer_normalization_constant: '1'
+Transfer_normalization_frequency: '100'
+Number_of_zeroes: '2'
+Number_of_poles: '2'
+response:
+  stages:
+  - input_units:
+      name: M/S
+      description: VELOCITY
+    output_units:
+      name: V
+      description: Volts
+    gain:
+      value: 76.7
+      frequency: 100
+    filter:
+      type: ANALOG
+      input_full_scale: null
+      output_full_scale: null
+      description: ' SENSOR RESPONSE   #optionel'
+    description: Base stage
+    output_sample_rate: 0.0
+    decimation_factor: 1
+notes:
+- ' # Generic response Geospace GS-One ZLAND_3C '
+- '# Response in frequency Hz'
+- '# C.Aubert, 19/12/2017'
+- '# CONSTANT 76.7'
+- ''

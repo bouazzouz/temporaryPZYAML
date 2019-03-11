@@ -1,0 +1,32 @@
+format_version: '0.104'
+Response_type: THEORETICAL
+Poles_and_Zeros_unit: Hz
+Input_sampling_interval: '0'
+Delay: '0'
+Transfer_normalization_constant: '1'
+Transfer_normalization_frequency: '0.05'
+response:
+  stages:
+  - input_units:
+      name: M/S
+      description: VELOCITY
+    output_units:
+      name: V
+      description: Volts
+    gain:
+      value: 20000.0
+      frequency: 100
+    filter:
+      type: ANALOG
+      input_full_scale: null
+      output_full_scale: null
+      description: ' SENSOR RESPONSE   #optionel'
+      $ref: include/STS2-N.filter.yaml
+    description: Base stage
+    output_sample_rate: 0.0
+    decimation_factor: 1
+notes:
+- ' # reponse d''un STS2-120'
+- "# haute sensibilit\xE9 pour station IDI de Mednet (cf page Web Mednet)"
+- '# AP, 20/08/2010'
+- ''

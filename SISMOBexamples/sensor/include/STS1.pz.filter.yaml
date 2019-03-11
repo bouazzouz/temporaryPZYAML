@@ -1,0 +1,19 @@
+format_version: '0.104'
+filter:
+  type: PolesZeros
+  units: rad/s
+  poles:
+  - -1.9642e-03  1.9642e-03
+  - -1.9642e-03 -1.9642e-03
+  - -3.1175 3.9091
+  - -3.1175 -3.9091
+  zeros:
+  - 0.0 0.0
+  - 0.0 0.0
+Poles_and_Zeroes_unit: 'Hz #optionel'
+Transfer_normalization_frequency: '1'
+Transfer_normalization_constant: '25.0743'
+notes:
+- ' # poles et zeros d''un STS1 (origine Geoscope)'
+- '# AP+HP, 30/08/2005'
+- ''

@@ -1,0 +1,13 @@
+format_version: '0.104'
+filter:
+  type: PolesZeros
+  units: rad/s
+  poles:
+  - '-0.0058925 +0.0058925          # P6    f = 1/120 Hz, b = sqrt(2)/2'
+  - '-0.0058925 -0.0058925          # P7'
+  - '-40.0 0.0                   # Mixer'
+  - -20.85 -74.37
+  - -20.85 74.37
+  zeros:
+  - 0.0 0.0
+  - 0.0 0.0

@@ -1,0 +1,23 @@
+format_version: '0.104'
+filter:
+  type: PolesZeros
+  units: rad/s
+  poles:
+  - -0.00587 -0.00591
+  - -0.00587 +0.00591
+  - -59.51 +75.68
+  - -59.51 -75.68
+  - -93.65 -240.01
+  - -93.65 +240.01
+  - -59.08 0.0
+  zeros:
+  - 0.0 0.0
+  - 0.0 0.0
+  - -69.09 0.0
+Transfer_normalization_frequency: '1'
+Transfer_normalization_constant: '525104992.3'
+notes:
+- ' # PZ Trillium 120 compact '
+- '# Doc Nanometrics page 48 transformation rad/s en Hz'
+- '# G. Cougoulat'
+- ''
