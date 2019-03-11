@@ -1,0 +1,75 @@
+---
+# Example instrumentation_components file
+format_version: "0.104"
+notes:
+    - "Notes are associated with information but not put in final metadata"
+yaml_anchors:
+    equipment_type: &EQUIPMENT_EMPTY
+        type: ~
+        description: ~
+        manufacturer: ~
+        vendor: ~
+        model: ~
+        serial_number: ~
+        calibration_date: ~
+    datalogger_fairfield: &EQUIPMENT_DATALOGGER_FAIRFIELD
+        <<: *EQUIPMENT_EMPTY
+        type: "FAIRFIELD-XXXX-G"
+        description: "Digitizer nodes"
+        manufacturer: "FAIRFIELD"
+        model: "ZLAND"
+
+revision: 
+    date: "2017-11-30"
+    authors: 
+        -
+            first_name: "Wayne"
+            last_name: "Crawford"
+            email: "crawford@ipgp.fr"
+instrument_components:
+    instrument_blocks:
+        sensor:
+            generic: # keys = MAKE_MODEL_CONFIG
+                "ZLAND3C": 
+                    equipment:
+                        <<: *EQUIPMENT_EMPTY
+                        model: "HTI-90-U"
+                        type: "Nodes"
+                        description: >-
+                                Sensor ZLAND3C
+                        manufacturer: "FAIRFIELD"
+                    seed_codes:
+                        band_base: "S" # à remplacer par D modifier  les check
+                        instrument: "P"
+                        orientation:
+                            "Z": {azimuth.deg: [0,0], dip.deg: [0,90]} # a voir
+                            "N": {azimuth.deg: [0,0], dip.deg: [0,0]}
+                            "E": {azimuth.deg: [0,0], dip.deg: [-90,0]}
+                    response_stages:
+                        - $ref: "responses/Sensors/ZLAND3C_theoretical.response.yaml"
+            
+        preamplifier:
+            generic: # keys = MAKE_MODEL_CONFIG
+                "FAIRFIELD-XXXX-G-64": 
+                    equipment:
+                        <<: *EQUIPMENT_EMPTY
+                        type: "Analog gain/filter "
+                        description: "Preamplifier interne ZLAND (X 64)"
+                        manufacturer: "FAIRFIELD"
+                        model: "FAIRFIELD-XXXX-G-64"
+                    response_stages:
+                        - $ref: "responses/Preamplifiers/FAIRFIELD-XXXX-G-64_theoretical.response.yaml"
+        datalogger:
+            generic: # keys = MAKE_MODEL_CONFIG
+                "FAIRFIELD.G.XXXX_500":
+                    equipment:
+                        <<: *EQUIPMENT_DATALOGGER_FAIRFIELD
+                    delay_correction_samples: 0
+                    response_stages:
+                        - $ref: "responses/DataLoggers/FAIRFIELD.G.XXXX.500.response.yaml"
+                "FAIRFIELD.G.XXXX_250":
+                    equipment:
+                        <<: *EQUIPMENT_DATALOGGER_FAIRFIELD
+                    delay_correction_samples: 0
+                    response_stages:
+                        - $ref: "responses/DataLoggers/FAIRFIELD.G.XXXX.250.response.yaml" # a creer

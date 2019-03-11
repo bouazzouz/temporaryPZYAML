@@ -1,0 +1,88 @@
+---
+# Example instrumentation file
+# Instrumentation files should be completed by the OBS facility
+format_version: "0.104"
+notes:
+    - "Notes are associated with information but not put in final metadata"
+yaml_anchors:
+    equipmenttype: &EQUIPMENTTYPE_EMPTY
+        type: ~
+        description: ~
+        manufacturer: ~
+        vendor: ~
+        model: ~
+        serial_number: ~
+        calibration_date: ~
+
+revision: 
+    date: "2018-06-01"
+    authors:
+        - 
+            first_name: "rima"
+            last_name: "rima"
+            email: "rima@resif.fr"
+        - 
+            first_name: "david"
+            last_name: "david"
+            email: "david@resif.fr"
+instrumentation:
+    facility:
+        reference_name: "RESIF"
+        full_name: "SISMOB facility"
+        email: "sismob@isterre.fr"
+        website: "http://sismob.fr"
+    instrument_components: 
+        $ref: "instrument_components.yaml"
+    instruments:
+        generic:    # model_config
+
+            "RESIF1": &TEST
+                equipment:
+                    <<: *EQUIPMENTTYPE_EMPTY
+                    model: "Nodes"
+                    type: "ZLAND3C"
+                    description: >-
+                         "Nodes FAIRFIELD, 3 composantes"
+                    manufacturer: "FAIRFIELD"
+                das_components:
+                    "1":
+                        orientation_code : "Z"
+                        datalogger: {reference_code: "FAIRFIELD.G.XXXX"}
+                        preamplifier: {reference_code: "FAIRFIELD-XXXX-G-64"}
+                        sensor: {reference_code: "ZLAND3C"}
+                    "2":
+                        orientation_code : "N" 
+                        datalogger: {reference_code: "FAIRFIELD.G.XXXX"}
+                        preamplifier: {reference_code: "FAIRFIELD-XXXX-G-64"}
+                        sensor: {reference_code: "ZLAND3C"}
+                    "3":
+                        orientation_code : "E" 
+                        datalogger: {reference_code: "FAIRFIELD.G.XXXX"}
+                        preamplifier: {reference_code: "FAIRFIELD-XXXX-G-64"}
+                        sensor: {reference_code: "ZLAND3C"}
+            "RESIF2":
+               <<: *TEST         
+
+        specific:   # can be specified by orientation codes (if unique) or das_component
+            "c'est obligatoire" : "test  "             
+               
+            
+            
+#loggers_NRL: # Convenience definitions for Nominal Reference Library loggers. 
+#    datalogger_configs: ['62','125','250','500','1000']
+#    loggers:
+#        LC2000_DPG_{sampling_rate}:
+#            datalogger: "LC2000_LOGGER"
+#            preamplifier: "LCHEAPO_DPG-CARD"
+#        LC2000_HYDROPHONE_{sampling_rate}:
+#            datalogger: "LC2000_LOGGER"
+#            preamplifier: "LCHEAPO_HYDRO-GAIN_16X"
+#        LC2000_GEOPHONE_{sampling_rate}:
+#            datalogger: "LC2000_LOGGER"
+#            preamplifier: "LCHEAPO_GEOPHONE-GAIN_128X"
+#        LC2000_BBOBSx1_{sampling_rate}:
+#            datalogger: "LC2000_LOGGER"
+#            preamplifier: "LCHEAPO_BBOBS-GAIN_1X"
+#        LC2000_BBOVBSx0p225_{sampling_rate}:
+#            datalogger: "LC2000_LOGGER"
+#            preamplifier: "LCHEAPO_BBOBS-GAIN_0P225X"

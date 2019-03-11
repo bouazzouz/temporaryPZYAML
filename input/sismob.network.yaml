@@ -1,0 +1,79 @@
+---
+# Network files should be completed by OBS facilities involved in a campaign
+format_version: "0.104"
+notes:
+    - "Notes are associated with information but not put in final metadata"
+yaml_anchors:
+    obs_clock_correction_linear_defaults: &LINEAR_CLOCK_DEFAULTS
+        time_base: "Seascan MCXO, ~1e-8 nominal drift"
+        reference: "GPS"
+        start_sync_instrument: 0
+    location_defaults: &LOC_DEFAULTS
+        depth.m: 0
+        geology: "unknown"
+        vault: "Sea floor"                    
+    location_surface_drop: &LOC_SURFACE_DROP
+        <<: *LOC_DEFAULTS
+        uncertainties.m: [200, 200, 20]
+        localisation_method: "Position is the sea-surface release point"
+    spobs2_125: &SPOBS2_125
+        reference_code: "RESIF1"
+        channel_locations:
+            "DPZ_00_0" : {sample_rate: 500, datalogger_config: "500",start_time: "2018-01-01T12:00:00Z", end_time: "2018-01-07T12:00:00Z"} #D et P : type d'instrument et gamme de fréquence. et Z Orientation vertivale
+            "DPN_00_0" : {sample_rate: 500, datalogger_config: "500",start_time: "2018-01-01T12:00:00Z", end_time: "2018-01-07T12:00:00Z"}
+            "DPE_00_0" : {sample_rate: 500, datalogger_config: "500",start_time: "2018-01-01T12:00:00Z", end_time: "2018-01-07T12:00:00Z"}
+            "DPZ_00_1" : {sample_rate: 250, datalogger_config: "250",start_time: "2018-01-08T12:00:00Z", end_time: "2018-01-10T12:00:00Z"} #D et P : type d'instrument et gamme de fréquence. et Z Orientation vertivale
+            "DPN_00_1" : {sample_rate: 250, datalogger_config: "250",start_time: "2018-01-08T12:00:00Z", end_time: "2018-01-10T12:00:00Z"}
+            "DPE_00_1" : {sample_rate: 250, datalogger_config: "250",start_time: "2018-01-08T12:00:00Z", end_time: "2018-01-10T12:00:00Z"}
+
+revision:
+    authors:
+        -
+            first_name : "rima"
+            last_name : "rima"
+            email: "rima@resif.fr"
+    date: "2019-02-12"
+network:
+    facility_reference_name: "ISTERRE"
+    campaign_reference_name: "Nodes"
+    general_information:
+        code: "ZO"
+        start_date: "2018-04-24"
+        end_date: "2018-06-24"
+        description: "RESOLVE-ARG"
+        comments: 
+            - " Glacier de l'argentiere"
+    instrumentation:
+        $ref: "instrumentation.yaml"
+    stations:
+        "AR001":
+            site: "Glacier de l'argentiere"
+            start_date: "2018-04-24T12:00:00Z"
+            end_date: "2018-06-24T21:01:00Z"
+            location_code: "00"
+            instrument:
+                "RESIF1":
+                    channel_locations:
+                        "DPZ_00" : {sample_rate: 500, datalogger_config: "500",start_time: "2018-04-24T12:00:00Z", end_time: "2018-05-07T12:00:00Z"} #D et P : type d'instrument et gamme de fréquence. et Z Orientation vertivale
+                        "DPN_00" : {sample_rate: 500, datalogger_config: "500",start_time: "2018-04-24T12:00:00Z", end_time: "2018-05-07T12:00:00Z"}
+                        "DPE_00" : {sample_rate: 500, datalogger_config: "500",start_time: "2018-04-24T12:00:00Z", end_time: "2018-05-07T12:00:00Z"}
+
+                    serial_number: "20"            
+                "RESIF2":
+                    channel_locations:
+                        "DPZ_00" : {sample_rate: 250, datalogger_config: "250",start_time: "2018-05-08T12:00:00Z", end_time: "2018-06-24T21:01:00Z"} #D et P : type d'instrument et gamme de fréquence. et Z Orientation vertivale
+                        "DPN_00" : {sample_rate: 250, datalogger_config: "250",start_time: "2018-05-08T12:00:00Z", end_time: "2018-06-24T21:01:00Z"}
+                        "DPE_00" : {sample_rate: 250, datalogger_config: "250",start_time: "2018-05-08T12:00:00Z", end_time: "2018-06-24T21:01:00Z"}
+
+                    serial_number: "20"
+
+            locations:
+                "00":
+                    <<: *LOC_SURFACE_DROP
+                    position: [45.963102,6.970229, 2330.1]
+            clock_corrections:
+                linear_drift:
+                    <<: *LINEAR_CLOCK_DEFAULTS
+                    start_sync_reference: "2018-04-24T12:00:00Z"
+                    end_sync_reference: "2018-06-24T21:01:00Z"
+                    end_sync_instrument: "2018-06-24T21:01:00Z"
