@@ -1,8 +1,8 @@
 format_version: '0.104'
+Number_of_poles: '0'
+Number_of_zeros: '187'
 filter:
   type: FIR
-  symmetry: NONE
-  offset: 0
   coefficients:
   - 8.46923e-10
   - 2.27422e-09
@@ -191,4 +191,3 @@ filter:
   - 4.538951e-09
   - 2.27422e-09
   - 8.46923e-10
-Number_of_zeros: '187'
